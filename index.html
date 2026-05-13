@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>番茄钟 - Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍅</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍅 番茄钟</h1>
+        </header>
+
+        <main>
+            <div class="timer-display">
+                <div class="mode-indicator" id="modeIndicator">工作时间</div>
+                <div class="timer" id="timer">25:00</div>
+                <div class="session-info">
+                    <span>第 <span id="currentSession">1</span> 个番茄</span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-primary" id="startBtn">开始</button>
+                <button class="btn btn-secondary" id="pauseBtn" disabled>暂停</button>
+                <button class="btn btn-danger" id="resetBtn">重置</button>
+            </div>
+
+            <div class="stats-panel">
+                <h3>今日统计</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value" id="todayPomodoros">0</div>
+                        <div class="stat-label">番茄数</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="todayMinutes">0</div>
+                        <div class="stat-label">专注分钟</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalSessions">0</div>
+                        <div class="stat-label">总完成数</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-panel">
+                <h3>设置</h3>
+                <div class="setting-item">
+                    <label for="workDuration">工作时长（分钟）</label>
+                    <input type="number" id="workDuration" value="25" min="1" max="60">
+                </div>
+                <div class="setting-item">
+                    <label for="breakDuration">休息时长（分钟）</label>
+                    <input type="number" id="breakDuration" value="5" min="1" max="30">
+                </div>
+                <div class="setting-item">
+                    <label for="longBreakDuration">长休息时长（分钟）</label>
+                    <input type="number" id="longBreakDuration" value="15" min="1" max="60">
+                </div>
+                <div class="setting-item">
+                    <label for="sessionsBeforeLongBreak">长休息间隔（番茄数）</label>
+                    <input type="number" id="sessionsBeforeLongBreak" value="4" min="2" max="10">
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="soundEnabled" checked>
+                        启用声音提醒
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="notificationEnabled" checked>
+                        启用系统通知
+                    </label>
+                </div>
+                <button class="btn btn-secondary" id="saveSettings">保存设置</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>按 <kbd>Space</kbd> 开始/暂停 | 按 <kbd>R</kbd> 重置</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
