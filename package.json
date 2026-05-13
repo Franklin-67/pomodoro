@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder --win",
+    "build": "electron-builder --dir",
     "build:dir": "electron-builder --win --dir"
   },
   "author": "Lin Yu",
@@ -26,8 +26,7 @@
       "index.html",
       "styles.css",
       "app.js",
-      "manifest.json",
-      "icon.png"
+      "manifest.json"
     ],
     "win": {
       "target": [
@@ -44,7 +43,6 @@
           ]
         }
       ],
-      "icon": "icon.png",
       "sign": null
     },
     "nsis": {
