@@ -1,0 +1,14 @@
+theme: pages-themes/circuit-breaker
+
+title: 番茄钟 - Pomodoro Timer
+description: 简单易用的番茄钟应用，帮助你专注工作，提高效率。
+baseurl: "/pomodoro"
+url: "https://franklin-67.github.io"
+
+markdown: kramdown
+
+nav_links:
+  - title: 首页
+    url: /
+  - title: GitHub 仓库
+    url: https://github.com/Franklin-67/pomodoro
